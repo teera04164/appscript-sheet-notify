@@ -1,7 +1,7 @@
 function myFunction() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Youtube")
-  var lastRow = sheet.getLastRow();
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("Youtube")
+  const lastRow = sheet.getLastRow();
   for (let row = 2; row <= lastRow; row++) {
     let name = sheet.getRange(`A${row}`).getValue();
     let monthPay = sheet.getRange(`B${row}`).getValue();
