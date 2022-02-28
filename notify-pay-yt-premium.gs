@@ -3,8 +3,8 @@ function myFunction() {
   const sheet = ss.getSheetByName("Youtube")
   const lastRow = sheet.getLastRow();
   for (let row = 2; row <= lastRow; row++) {
-    let name = sheet.getRange(`A${row}`).getValue();
-    let monthPay = sheet.getRange(`B${row}`).getValue();
+    const name = sheet.getRange(`A${row}`).getValue();
+    const monthPay = sheet.getRange(`B${row}`).getValue();
     checkAlertUser(name, monthPay)
   }
 }
@@ -13,16 +13,16 @@ const monthTh = ["","มกราคม", "กุมภาพันธ์", "ม
 
 
 function checkAlertUser(name, monthPay){
-  let currentTime = new Date()
-  let currentDate = currentTime.getDate()
-  let currentYear = currentTime.getFullYear() + 543
-  let currentMonth = currentTime.getMonth()+1
-  let [payMonth, payYear] = monthPay.split('-')
-  let lastDayOfMonth = getLastDayOfMonFnc()
-  let equeDay = (currentDate == lastDayOfMonth)
-  let equeMonth = (+payMonth == currentMonth)
-  let equeYear = (+payYear == currentYear)
-  let isAlertPay = (equeDay && equeMonth  && equeYear)
+  const currentTime = new Date()
+  const currentDate = currentTime.getDate()
+  const currentYear = currentTime.getFullYear() + 543
+  const currentMonth = currentTime.getMonth()+1
+  const [payMonth, payYear] = monthPay.split('-')
+  const lastDayOfMonth = getLastDayOfMonFnc()
+  const equeDay = (currentDate == lastDayOfMonth)
+  const equeMonth = (+payMonth == currentMonth)
+  const equeYear = (+payYear == currentYear)
+  const isAlertPay = (equeDay && equeMonth  && equeYear)
   if(isAlertPay){
     console.log("current => ",currentDate,currentMonth, currentYear)
     console.log("pay => ", payMonth, payYear)
