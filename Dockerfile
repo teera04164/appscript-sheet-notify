@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14.19-bullseye-slim
 
 # RUN apk update \
 #     apk add openssl/libcrypto1.1.1l-r0
