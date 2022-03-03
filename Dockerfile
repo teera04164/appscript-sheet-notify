@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:10
 
 # RUN apk update \
 #     apk add openssl/libcrypto1.1.1l-r0
